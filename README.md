@@ -81,6 +81,8 @@ El polimorfismo permite que objetos de diferentes clases sean tratados como obje
 
 **Ejemplo en Python:**
 ```python
+import math
+
 class Figura:
     def area(self):
         pass
@@ -90,7 +92,7 @@ class Circulo(Figura):
         self.radio = radio
     
     def area(self):
-        return 3.14159 * self.radio ** 2
+        return math.pi * self.radio ** 2
 
 class Rectangulo(Figura):
     def __init__(self, base, altura):
@@ -118,6 +120,8 @@ La abstracción consiste en modelar las características esenciales de un objeto
 
 **Ejemplo en Python:**
 ```python
+# ABC (Abstract Base Class) permite crear clases abstractas
+# abstractmethod marca métodos que deben ser implementados por las subclases
 from abc import ABC, abstractmethod
 
 class Vehiculo(ABC):  # Clase abstracta
@@ -258,6 +262,20 @@ persona2 = Persona("Luis", 30)
 ### Constructor
 
 El constructor (`__init__` en Python) es un método especial que se ejecuta automáticamente cuando se crea un objeto.
+
+```python
+class Coche:
+    def __init__(self, marca, modelo, año):
+        # Este código se ejecuta al crear el objeto
+        self.marca = marca
+        self.modelo = modelo
+        self.año = año
+        print(f"Coche creado: {marca} {modelo}")
+
+# Al crear el objeto, el constructor se ejecuta automáticamente
+mi_coche = Coche("Toyota", "Corolla", 2024)
+# Salida: Coche creado: Toyota Corolla
+```
 
 ### Métodos
 
